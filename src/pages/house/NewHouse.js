@@ -104,13 +104,13 @@ class NewHouse extends Component {
 
         console.log("Rooomssss", this.state.rooms);
 
-        const images = this.state.rooms.reduce((prev, current) =>
-            prev.concat(current.imageFiles)
-        , []);
-
-        images.forEach(image => {
-            formData.append("images", image.originFileObj);
-        });
+        // const images = this.state.rooms.reduce((prev, current) =>
+        //     prev.concat(current.imageFiles)
+        // , []);
+        //
+        // images.forEach(image => {
+        //     formData.append("images", image.originFileObj);
+        // });
 
 
         createHouse(formData)
@@ -200,16 +200,16 @@ class NewHouse extends Component {
             return true;
         }
 
-        if(this.state.description.validateStatus !== 'success') {
-            return true;
-        }
+        // if(this.state.description.validateStatus !== 'success') {
+        //     return true;
+        // }
 
-        for(let i = 0; i < this.state.rooms.length; i++) {
-            const room = this.state.rooms[i];
-            if(room.validateStatus !== 'success') {
-                return true;
-            }
-        }
+        // for(let i = 0; i < this.state.rooms.length; i++) {
+        //     const room = this.state.rooms[i];
+        //     if(room.validateStatus !== 'success') {
+        //         return true;
+        //     }
+        // }
 
         if(this.state.location.coordinates == null)
         {
@@ -291,50 +291,50 @@ class NewHouse extends Component {
                         <FormItem validateStatus={this.state.name.validateStatus}
                                   help={this.state.name.errorMsg} className="poll-form-row">
                             <Input
-                                placeholder="numele casei"
+                                placeholder="numele casei/numele firmei"
                                 style = {{ fontSize: '30px', width:'50%', height: '100px', marginLeft: 'auto', marginRight: 'auto', display: 'block', textAlign:'center' }}
                                 name = "name"
                                 value = {this.state.name.text}
                                 onChange = {this.handleNameChange} />
                         </FormItem>
 
-                        <div className="wrap" style={{height:"150px"}}>
-                            <section className="grid grid-pad services">
-                                <h1>3. Descriere:</h1>
-                            </section>
-                        </div>
+                        {/*<div className="wrap" style={{height:"150px"}}>*/}
+                        {/*    <section className="grid grid-pad services">*/}
+                        {/*        <h1>3. Descriere:</h1>*/}
+                        {/*    </section>*/}
+                        {/*</div>*/}
 
 
-                        <FormItem validateStatus={this.state.description.validateStatus}
-                                  help={this.state.description.errorMsg} className="poll-form-row">
-                            <TextArea
-                                placeholder="Enter your house description"
-                                style = {{ fontSize: '30px', width:'50%', height: '100px', marginLeft: 'auto', marginRight: 'auto', display: 'block', textAlign:'center' }}
-                                autosize={{ minRows: 3, maxRows: 6 }}
-                                name = "description"
-                                value = {this.state.description.text}
-                                onChange = {this.handleDescriptionChange} />
-                        </FormItem>
+                        {/*<FormItem validateStatus={this.state.description.validateStatus}*/}
+                        {/*          help={this.state.description.errorMsg} className="poll-form-row">*/}
+                        {/*    <TextArea*/}
+                        {/*        placeholder="Enter your house description"*/}
+                        {/*        style = {{ fontSize: '30px', width:'50%', height: '100px', marginLeft: 'auto', marginRight: 'auto', display: 'block', textAlign:'center' }}*/}
+                        {/*        autosize={{ minRows: 3, maxRows: 6 }}*/}
+                        {/*        name = "description"*/}
+                        {/*        value = {this.state.description.text}*/}
+                        {/*        onChange = {this.handleDescriptionChange} />*/}
+                        {/*</FormItem>*/}
 
-                        <div className="wrap" style={{height:"150px"}}>
-                            <section className="grid grid-pad services">
-                                <h1>4. Camere:</h1>
-                            </section>
-                        </div>
-
-
-                        <div  style = {{ fontSize: '30px', width:'50%',  marginLeft: 'auto', marginRight: 'auto', display: 'block', textAlign:'center' }}>
-                            {roomViews}
-                        </div>
+                        {/*<div className="wrap" style={{height:"150px"}}>*/}
+                        {/*    <section className="grid grid-pad services">*/}
+                        {/*        <h1>4. Camere:</h1>*/}
+                        {/*    </section>*/}
+                        {/*</div>*/}
 
 
-                        <FormItem className="poll-form-row">
-                            <div  style = {{ fontSize: '30px', width:'50%', height: '100px', marginLeft: 'auto', marginRight: 'auto', display: 'block', textAlign:'center' }}>
-                            <Button type="dashed" onClick={this.addRoom} disabled={this.state.rooms.length === HOUSE_MAX_ROOMS}>
-                                <Icon type="plus" /> Adauga o camera
-                            </Button>
-                            </div>
-                        </FormItem>
+                        {/*<div  style = {{ fontSize: '30px', width:'50%',  marginLeft: 'auto', marginRight: 'auto', display: 'block', textAlign:'center' }}>*/}
+                        {/*    {roomViews}*/}
+                        {/*</div>*/}
+
+
+                        {/*<FormItem className="poll-form-row">*/}
+                        {/*    <div  style = {{ fontSize: '30px', width:'50%', height: '100px', marginLeft: 'auto', marginRight: 'auto', display: 'block', textAlign:'center' }}>*/}
+                        {/*    <Button type="dashed" onClick={this.addRoom} disabled={this.state.rooms.length === HOUSE_MAX_ROOMS}>*/}
+                        {/*        <Icon type="plus" /> Adauga o camera*/}
+                        {/*    </Button>*/}
+                        {/*    </div>*/}
+                        {/*</FormItem>*/}
 
                         <FormItem className="poll-form-row">
                             <Button type="primary"

@@ -111,13 +111,13 @@ export class HouseView extends Component {
         return (
             <div className="col-1-2">
                 <article className="post-wrap">
-                    <div className="post-img">
-                        <a href="#0">
-                            <div className="post-background"
-                                 onClick={() => this.onOpen(this.props.location.id)}
-                                 style={{backgroundImage: `url('data:image/jpeg;base64,${this.props.location.rooms[0].imageData}')`}} alt=""/>
-                        </a>
-                    </div>
+                    {/*<div className="post-img">*/}
+                    {/*    <a href="#0">*/}
+                    {/*        <div className="post-background"*/}
+                    {/*             onClick={() => this.onOpen(this.props.location.id)}*/}
+                    {/*             alt=""/>*/}
+                    {/*    </a>*/}
+                    {/*</div>*/}
                     <div className="post">
                         <h2 className="entry-title"><a href="#0">{this.props.location.name}</a></h2>
                         <h4>{this.props.location.description}</h4>
@@ -126,7 +126,7 @@ export class HouseView extends Component {
                                 style={{backgroundColor: "green", color: "white"}}
 
                         >
-                            Incepe turul</Button>
+                            Vizualizeaza facturi</Button>
 
                         {!this.isDeleteButtonDisplayed() ? null :
                             <Button

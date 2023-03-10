@@ -122,7 +122,7 @@ class Home extends Component {
 
                 <div className="wrap services-wrap" id="services">
                     <section className="grid grid-pad services">
-                        <h1>Aici incepe cautarea!</h1>
+                        <h2 style={{color:"#5aa6d1", fontFamily:"Copperplate Gothic Light",backgroundColor:"#001c55"}}>Rule over your own house!</h2>
                         <div style={{marginBottom: '150px'}}/>
                         <div className="col-1-4 service-box service-1" >
                             <div className="content">
@@ -130,28 +130,28 @@ class Home extends Component {
                                     <b className="circle-icon icon-heart4">🏠</b>
                                 </div>
                                 <div className="service-entry">
-                                    <h2>Gasiti locuinta mult visata</h2>
+                                    <h2>Vizualizati furnizori</h2>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="col-1-4 service-box service-2" >
-                            <div className="content">
-                                <div className="service-icon">
-                                    <b className="circle-icon icon-star4">🗺️</b>
-                                </div>
-                                <div className="service-entry">
-                                    <h2>Alegeti zona de interes</h2>
-                                </div>
-                            </div>
-                        </div>
+                        {/*<div className="col-1-4 service-box service-2" >*/}
+                        {/*    <div className="content">*/}
+                        {/*        <div className="service-icon">*/}
+                        {/*            <b className="circle-icon icon-star4">🗺️</b>*/}
+                        {/*        </div>*/}
+                        {/*        <div className="service-entry">*/}
+                        {/*            <h2>Alegeti zona de interes</h2>*/}
+                        {/*        </div>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                         <div className="col-1-4 service-box service-3">
                             <div className="content">
                                 <div className="service-icon">
                                     <b className="circle-icon icon-display">🌐</b>
                                 </div>
                                 <div className="service-entry">
-                                    <h2>Vizualizati tururi 360 pentru fiecare locatie</h2>
+                                    <h2>Efectuati plati online usor si simplu!</h2>
                                 </div>
                             </div>
                         </div>
@@ -179,7 +179,7 @@ class Home extends Component {
                                             <h1 className="info-counter-number" style={{color: "white"}}>
                                                 {this.state.locations.length}
                                             </h1>
-                                            <h2 className="info-counter-text">Tururi 360° disponibile:</h2>
+                                            <h2 className="info-counter-text">Casele mele:</h2>
                                         </div>
                                     </div>
                                 </div>

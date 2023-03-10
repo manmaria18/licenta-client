@@ -47,17 +47,17 @@ class ViewHouse extends Component {
         getHouse(this.props.match.params.id)
             .then((response) => {
                 let promises = [];
-                response.rooms.forEach((room, index) => {
-                    let promise = new Promise((resolve,reject) => {
-                        addScene(`room-${index}`, {
-                                imageSource: `data:image/jpeg;base64,${room.imageData}`
-                            },
-                            () => resolve()
-                        );
-                    });
-
-                    promises.push(promise);
-                })
+                // response.rooms.forEach((room, index) => {
+                //     let promise = new Promise((resolve,reject) => {
+                //         addScene(`room-${index}`, {
+                //                 imageSource: `data:image/jpeg;base64,${room.imageData}`
+                //             },
+                //             () => resolve()
+                //         );
+                //     });
+                //
+                //     promises.push(promise);
+                // })
 
                 Promise.all(promises).then(() => {
                     removeScene("default-scene");
@@ -69,12 +69,12 @@ class ViewHouse extends Component {
                             name: {
                                 text: response.name,
                             },
-                            description: {
-                                text: response.description,
-                            },
-                            price: response.price,
-                            roomsLength: response.rooms.length,
-                            liked: response.liked,
+                            // description: {
+                            //     text: response.description,
+                            // },
+                            // price: response.price,
+                            // roomsLength: response.rooms.length,
+                            // liked: response.liked,
                             location: response.location,
                         }
                     })

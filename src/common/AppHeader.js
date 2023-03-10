@@ -55,12 +55,13 @@ class AppHeader extends Component {
           <Menu.Item key="/search">
               <input value={this.state.inputValue}
                      onChange={evt => this.updateInputValue(evt)}
-                     placeholder={"Cautati o locuinta?"}
+                     placeholder={"Cautare"}
                      style={{ height: '34px',
                          marginRight: 'auto',
                          marginLeft: 'auto',
                          borderTopLeftRadius: '5px',
-                         borderBottomLeftRadius: '5px'}}
+                         borderBottomLeftRadius: '5px',
+                         }}
               />
               <Button onClick={this.search}
 
@@ -97,19 +98,21 @@ class AppHeader extends Component {
 
         return (
             <Header className="app-header"
-                    style={{backgroundColor: '#2C2D31',
+                    style={{backgroundColor: '#001c55',  //'#2C2D31',
                             color: 'white'}}>
             <div >
               <div className="app-title" >
-                <Link style={{color:'white',
-                              marginLeft:"30px"}} to="/">Imobiliare360</Link>
+                <Link style={{color:'#5aa6d1',
+                              fontFamily:'Copperplate Gothic Light',
+                              fontSize:35,
+                              marginLeft:"30px"}} to="/">Emperia</Link>
               </div>
               <Menu
                 className="app-menu"
                 mode="horizontal"
                 selectedKeys={[this.props.location.pathname]}
                 style={{ lineHeight: '64px',
-                         backgroundColor: '#2C2D31',
+                         backgroundColor: '#5aa6d1',
                          color: 'white'}} >
                   {menuItems}
               </Menu>

@@ -25,6 +25,7 @@ import PrivateRoute from '../common/PrivateRoute';
 
 import { Layout, notification } from 'antd';
 import Admin from "../user/admin/Admin";
+import ViewBillsOfAHouse from "../pages/house/ViewBillsOfAHouse";
 const { Content } = Layout;
 
 class App extends Component {
@@ -78,14 +79,14 @@ class App extends Component {
     this.props.history.push(redirectTo);
     
     notification[notificationType]({
-      message: 'Imobiliare 360',
+      message: 'Emperia',
       description: description,
     });
   }
 
   handleLogin() {
     notification.success({
-      message: 'Imobiliare 360',
+      message: 'Emperia',
       description: "V-ati logat cu succes.",
     });
     this.loadCurrentUser();
@@ -140,7 +141,7 @@ class App extends Component {
                               currentUser={this.state.currentUser}></PrivateRoute>
 
                 <Route path="/house/view/:id"
-                       component={ViewHouse}
+                       component={ViewBillsOfAHouse}
                        currentUser={this.state.currentUser}></Route>
 
                 <Route path="/house/search/:name"
@@ -156,13 +157,13 @@ class App extends Component {
               <path d="M0 0 C 50 100 80 100 100 0 Z"></path>
             </svg>
 
-            <footer className="wrap">
+            <footer className="wrap" style={{backgroundColor:"#001c55"}}>
               <div className="social-footer">
                 <div className="grid grid-pad">
                   <div className="col-1-1">
                     <div className="content">
-                      <div style={{marginBottom: '50px'}}/>
-                      <p className="source-org copyright">© 2022 | Ana Tivadar</p>
+                      <div style={{marginBottom: '50px', backgroundColor:"#001c55"}}/>
+                      <p className="source-org copyright" style={{color:"#5aa6d1",fontFamily:"Copperplate Gothic Light" }}>© 2023 | Man Maria</p>
                     </div>
                   </div>
                 </div>

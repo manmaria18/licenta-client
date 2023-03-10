@@ -44,6 +44,22 @@ export function getAllUsers() {
     });
 }
 
+// export function getAllBills() {
+//
+//     return request({
+//         url: API_BASE_URL + "/bills/",
+//         method: 'GET'
+//     });
+// }
+//
+export function getAllBillsOfAHouse(id) {
+
+    return request({
+        url: API_BASE_URL + "/bills/search/" + id,
+        method: 'GET'
+    });
+}
+
 export function getAllHomeLocations() {
 
     return request({
