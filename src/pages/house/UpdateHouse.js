@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {createHouse, getAllHomes, getAllServices} from '../../util/APIUtils';
+import {editHouse, getAllHomes, getAllServices, getHouse} from '../../util/APIUtils';
 import {
     HOUSE_MAX_ROOMS,
 } from '../../constants';
@@ -21,10 +21,11 @@ const FormItem = Form.Item;
 const { TextArea } = Input
 
 
-class NewHouse extends Component {
+class UpdateHouse extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: 0,
             name: {
                 text: ''
             },
@@ -42,9 +43,7 @@ class NewHouse extends Component {
                     }
                 },
             ],
-            location: {
-                coordinates: null,
-            },
+            location: null,
             service: {
                 id: 0,
                 serviceType: {
@@ -61,6 +60,20 @@ class NewHouse extends Component {
 
 
         };
+
+        getHouse(this.props.match.params.id)
+            .then((response) => {
+                console.log("RESPONSE",response);
+                this.setState({
+                    id: response.id,
+                    name: {
+                        text: response.name,
+                    },
+                    location: response.location,
+                    services: [],
+                    selectedServices: response.services ? response.services.map(service => service.id) : [],
+                });
+            });
 
         this.addService = this.addService.bind(this);
         this.removeRoom = this.removeRoom.bind(this);
@@ -178,10 +191,10 @@ class NewHouse extends Component {
         event.preventDefault();
 
         const home = {
-
+            id: this.state.id,
             name: this.state.name.text,
             //description: this.state.description.text,
-            location: this.state.location.coordinates,
+            location: this.state.location,
             services: this.state.selectedServices.map(selectedId=> {
                 return {
                     id: selectedId,
@@ -210,7 +223,7 @@ class NewHouse extends Component {
         // });
 
 
-        createHouse(home)
+        editHouse(home)
             .then(response => {
                 this.props.history.push("/");
             }).catch(error => {
@@ -278,10 +291,8 @@ class NewHouse extends Component {
         };
 
         this.setState({
-            location: {
-                coordinates: coordinates,
-            }
-        })
+            location: coordinates,
+            })
     }
 
     isFormInvalid() {
@@ -300,7 +311,7 @@ class NewHouse extends Component {
         //     }
         // }
 
-        if(this.state.location.coordinates == null)
+        if(this.state.location == null)
         {
             return true;
         }
@@ -326,24 +337,24 @@ class NewHouse extends Component {
             console.log(key,value);
             services.push(
                 <div  style = {{ fontSize: '30px', width:'50%',  marginLeft: 'auto', marginRight: 'auto', display: 'flex',flexDirection:'column', textAlign:'center' }}>
-                  <div style={{display:'flex',justifyContent:'center', backgroundColor:"#5aa6d1"}}>
-                      {key}
-                  </div>
+                    <div style={{display:'flex',justifyContent:'center', backgroundColor:"#5aa6d1"}}>
+                        {key}
+                    </div>
                     {
                         value.map(serviceProvider=>(
-                            <div style={{display:'flex',justifyContent:'center'}}>
-                                {
-                                    this.isServiceSelected(serviceProvider.id)
-                                        ?  <Button onClick={()=> this.unselectService(serviceProvider.id)}>
+                                <div style={{display:'flex',justifyContent:'center'}}>
+                                    {
+                                        this.isServiceSelected(serviceProvider.id)
+                                            ?  <Button onClick={()=> this.unselectService(serviceProvider.id)}>
                                                 REMOVE {serviceProvider.provider.name}---{serviceProvider.price}
                                             </Button>
-                                        :  <Button onClick={()=> this.selectService(serviceProvider.id)}>
+                                            :  <Button onClick={()=> this.selectService(serviceProvider.id)}>
                                                 ADD {serviceProvider.provider.name}---{serviceProvider.price}
-                                           </Button>
-                                }
+                                            </Button>
+                                    }
 
 
-                            </div>
+                                </div>
                             )
 
                         )
@@ -365,18 +376,18 @@ class NewHouse extends Component {
         // });
 
 
-        const locations = this.state.location.coordinates ? [this.state.location.coordinates] : []
+        const locations = this.state.location ? [this.state.location] : []
 
         return (
             <div>
 
                     <Form onSubmit={this.handleSubmit}>
-                        <FormItem validateStatus={this.state.location.validateStatus}
-                                  help={this.state.location.errorMsg} className="poll-form-row">
+                        <FormItem
+                                  className="poll-form-row">
 
                             <div className="wrap" style={{height:"150px"}}>
                                 <section className="grid grid-pad services">
-                                    <h1>Adauga o noua locuinta!</h1>
+                                    <h1>Modifica locuinta!</h1>
                                 </section>
                             </div>
 
@@ -473,7 +484,7 @@ class NewHouse extends Component {
                                     htmlType="submit"
                                     size="large"
                                     disabled={this.isFormInvalid()}
-                                    className="create-poll-form-button">Adauga</Button>
+                                    className="create-poll-form-button">Modifica</Button>
                         </FormItem>
                     </Form>
             </div>
@@ -481,4 +492,4 @@ class NewHouse extends Component {
     }
 }
 
-export default NewHouse;
+export default UpdateHouse;

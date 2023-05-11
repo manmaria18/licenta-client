@@ -26,6 +26,7 @@ import PrivateRoute from '../common/PrivateRoute';
 import { Layout, notification } from 'antd';
 import Admin from "../user/admin/Admin";
 import ViewBillsOfAHouse from "../pages/house/ViewBillsOfAHouse";
+import UpdateHouse from "../pages/house/UpdateHouse";
 const { Content } = Layout;
 
 class App extends Component {
@@ -136,7 +137,7 @@ class App extends Component {
                               handleLogout={this.handleLogout}></PrivateRoute>
 
                 <PrivateRoute authenticated={this.state.isAuthenticated}
-                              path="/house/edit/:id" component={EditHouse}
+                              path="/house/update/:id" component={UpdateHouse}
                               handleLogout={this.handleLogout}
                               currentUser={this.state.currentUser}></PrivateRoute>
 

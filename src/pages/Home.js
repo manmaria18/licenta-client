@@ -43,7 +43,7 @@ class Home extends Component {
         promise
         .then(response => {
 
-            console.log(response);
+            console.log("HOME RESPONSE",response);
             this.setState({
                 locations: response,
                 isLoading: false

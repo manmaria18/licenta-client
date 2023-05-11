@@ -122,7 +122,7 @@ class ViewHouse extends Component {
             this.setState({
                 house: {...this.state.house, liked: false}
             })
-        });;
+        });
     }
 
 

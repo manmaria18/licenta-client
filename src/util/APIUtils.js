@@ -36,6 +36,13 @@ export function getAllHomes() {
     });
 }
 
+export function getAllServices(){
+    return request({
+        url: API_BASE_URL+ "/providers/services/",
+        method: 'GET'
+    })
+}
+
 export function getAllUsers() {
 
     return request({
@@ -133,16 +140,16 @@ export function createHouse(houseData) {
     return request({
         url: API_BASE_URL + "/home/",
         method: 'POST',
-        body: houseData
-    }, 'multipart/form-data');
+        body: JSON.stringify(houseData)
+    });
 }
 
 export function editHouse(houseData) {
     return request({
         url: API_BASE_URL + "/home/",
         method: 'PUT',
-        body: houseData
-    }, 'multipart/form-data');
+        body: JSON.stringify(houseData)
+    });
 }
 
 
@@ -193,5 +200,9 @@ export function getUserProfile(username) {
         url: API_BASE_URL + "/users/" + username,
         method: 'GET'
     });
+}
+
+export function submitIndex(index){
+
 }
 

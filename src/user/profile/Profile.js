@@ -278,7 +278,7 @@ class Profile extends Component {
                                     tabBarStyle={tabBarStyle}
                                     size="large"
                                     className="profile-tabs">
-                                    <TabPane tab={`${this.state.locations.length} Anunturi`} key="1">
+                                    <TabPane tab={`${this.state.locations.length} Casele mele`} key="1">
 
                                         <div className="parallax-section parallax1">
                                             <div className="grid grid-pad">
@@ -316,7 +316,7 @@ class Profile extends Component {
                                         </div>
                                     </TabPane>
 
-                                    <TabPane tab={`${this.state.favorites.length} Favorite`}  key="2">
+                                    <TabPane tab={`${this.state.favorites.length} Furnizorii mei`}  key="2">
 
                                         <div className="parallax-section parallax1">
                                             <div className="grid grid-pad">

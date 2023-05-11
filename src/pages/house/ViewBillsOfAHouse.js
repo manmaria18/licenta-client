@@ -8,6 +8,7 @@ import './ViewHouse.css';
 import { Form,
     Input, Button, Icon, notification } from 'antd';
 import {MapView} from "../../components/map/MapView";
+import IndexForm from "../../components/IndexForm";
 
 
 const FormItem = Form.Item;
@@ -191,16 +192,26 @@ class ViewBillsOfAHouse extends Component {
                                    <br></br>
                                    <article className="post-wrap">
                                        <div className="post">
-                                           <h4 className="entry-title">Emitent: {current.issuedBy}</h4>
+                                           <h4 className="entry-title">Emitent: {current.providerService.provider.name}</h4>
                                            <h4 className="entry-title">Data emiterii: {current.issueDate}</h4>
                                            <h4 className="entry-title">Deadline: {current.deadline}</h4>
                                            <h4 className="entry-title">Suma: {current.sum}</h4>
-                                           <Button className="btn read-more"
-                                                   onClick={() => this.onOpen(this.props.location.id)}
-                                                   style={{backgroundColor: "green", color: "white"}}
+                                           {
+                                               current.status.status == "EXPECTING_INPUT"
+                                                   //Paseaza atribute precum bill
+                                                   ? <IndexForm />
+                                                   : <Button className="btn read-more"
+                                                             onClick={() => this.onOpen(this.props.location.id)}
+                                                             style={{backgroundColor: "green", color: "white"}}
 
-                                           >
-                                               Plateste factura</Button>
+                                                   >
+                                                       Plateste factura
+                                                    </Button>
+
+
+                                           }
+
+
                                        </div>
                                    </article>
                                    <br></br>
