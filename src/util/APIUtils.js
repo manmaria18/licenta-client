@@ -202,7 +202,12 @@ export function getUserProfile(username) {
     });
 }
 
-export function submitIndex(index){
-
+export function submitIndex(billIndex){
+    console.log("SUBMIT INDEX",billIndex);
+    return request({
+        url: API_BASE_URL + "/bills/index",
+        method: 'POST',
+        body: JSON.stringify(billIndex)
+    });
 }
 
