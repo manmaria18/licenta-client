@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {searchHouse} from '../../util/APIUtils';
+import {getHouse, searchHouse} from '../../util/APIUtils';
 import './SearchHouse.css';
 
 import {MapView} from "../../components/map/MapView";

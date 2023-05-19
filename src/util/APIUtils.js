@@ -38,7 +38,7 @@ export function getAllHomes() {
 
 export function getAllServices(){
     return request({
-        url: API_BASE_URL+ "/providers/services/",
+        url: API_BASE_URL+ "/providerService/",
         method: 'GET'
     })
 }
@@ -51,14 +51,7 @@ export function getAllUsers() {
     });
 }
 
-// export function getAllBills() {
-//
-//     return request({
-//         url: API_BASE_URL + "/bills/",
-//         method: 'GET'
-//     });
-// }
-//
+
 export function getAllBillsOfAHouse(id) {
 
     return request({
@@ -70,7 +63,7 @@ export function getAllBillsOfAHouse(id) {
 export function getAllHomeLocations() {
 
     return request({
-        url: API_BASE_URL + "/location/homelocations",
+        url: API_BASE_URL + "/location/homeLocations",
         method: 'GET'
     });
 }
