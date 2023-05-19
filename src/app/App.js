@@ -10,24 +10,24 @@ import { getCurrentUser } from '../util/APIUtils';
 import { ACCESS_TOKEN } from '../constants';
 
 import Home from '../pages/Home';
-import TestTheme from '../pages/TestTheme';
-import NewHouse from '../pages/house/NewHouse';
-import ViewHouse from '../pages/house/ViewHouse';
-import EditHouse from '../pages/house/EditHouse';
+import NewHousePage from '../pages/house/NewHousePage';
 import SearchHouse from '../pages/house/SearchHouse';
-import Login from '../user/login/Login';
-import Signup from '../user/signup/Signup';
-import Profile from '../user/profile/Profile';
+import Login from '../pages/user/login/Login';
+import Signup from '../pages/user/signup/Signup';
+import Profile from '../pages/user/profile/Profile';
 import AppHeader from '../common/AppHeader';
 import NotFound from '../common/NotFound';
 import LoadingIndicator from '../common/LoadingIndicator';
 import PrivateRoute from '../common/PrivateRoute';
 
 import { Layout, notification } from 'antd';
-import Admin from "../user/admin/Admin";
 import ViewBillsOfAHouse from "../pages/house/ViewBillsOfAHouse";
-import UpdateHouse from "../pages/house/UpdateHouse";
+import UpdateHouse from "../pages/house/UpdateHousePage";
+import '../pages/TestTheme.css'
+
 const { Content } = Layout;
+
+
 
 class App extends Component {
   constructor(props) {
@@ -110,10 +110,6 @@ class App extends Component {
           <Content className="app-content">
             <div className="container">
               <Switch>
-                <Route exact path="/experiment"
-                       render={(props) => <TestTheme isAuthenticated={this.state.isAuthenticated}
-                                                currentUser={this.state.currentUser} handleLogout={this.handleLogout} {...props} />}>
-                </Route>
 
                 <Route exact path="/" 
                   render={(props) => <Home isAuthenticated={this.state.isAuthenticated}
@@ -128,12 +124,8 @@ class App extends Component {
                        render={(props) => <Profile isAuthenticated={this.state.isAuthenticated} currentUser={this.state.currentUser} {...props}  />}>
                 </Route>
 
-                <Route path="/admin/:username"
-                       render={(props) => <Admin isAuthenticated={this.state.isAuthenticated} currentUser={this.state.currentUser} {...props}  />}>
-                </Route>
-
                 <PrivateRoute authenticated={this.state.isAuthenticated}
-                              path="/house/new" component={NewHouse}
+                              path="/house/new" component={NewHousePage}
                               handleLogout={this.handleLogout}></PrivateRoute>
 
                 <PrivateRoute authenticated={this.state.isAuthenticated}

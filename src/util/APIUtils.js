@@ -195,10 +195,17 @@ export function getUserProfile(username) {
     });
 }
 
+export function getUserBills() {
+    return request({
+        url: API_BASE_URL + "/bills/mine",
+        method: 'GET'
+    });
+}
+
 export function submitIndex(billIndex){
     console.log("SUBMIT INDEX",billIndex);
     return request({
-        url: API_BASE_URL + "/bills/index",
+        url: API_BASE_URL + "/payment/index",
         method: 'POST',
         body: JSON.stringify(billIndex)
     });

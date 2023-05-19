@@ -1,15 +1,8 @@
 export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080/api';
 export const ACCESS_TOKEN = 'accessToken';
 
-export const MAX_CHOICES = 6;
-
-export const POLL_QUESTION_MAX_LENGTH = 300;
-
 export const HOUSE_DESCRIPTION_MAX_LENGTH = 300;
 export const HOUSE_NAME_MAX_LENGTH = 50;
-export const HOUSE_MAX_ROOMS = 6;
-
-export const POLL_CHOICE_MAX_LENGTH = 40;
 
 export const NAME_MIN_LENGTH = 4;
 export const NAME_MAX_LENGTH = 40;
@@ -21,3 +14,6 @@ export const EMAIL_MAX_LENGTH = 40;
 
 export const PASSWORD_MIN_LENGTH = 6;
 export const PASSWORD_MAX_LENGTH = 20;
+
+
+export const EXPECTING_INPUT = "EXPECTING_INPUT";

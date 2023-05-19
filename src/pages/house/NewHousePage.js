@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { createHouse, getAllServices } from '../../util/APIUtils';
-import './NewHouse.css';
+import './NewHousePage.css';
 import {Button, Form, notification} from 'antd';
 import LocationSection from '../../components/input/LocationSection'
 import NameSection from '../../components/input/NameSection'
@@ -9,7 +9,7 @@ import CurveDownSvg from "../../components/design/CurveDownSvg";
 
 const FormItem = Form.Item;
 
-class NewHouse extends Component {
+class NewHousePage extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -199,4 +199,4 @@ class NewHouse extends Component {
     }
 }
 
-export default NewHouse;
+export default NewHousePage;

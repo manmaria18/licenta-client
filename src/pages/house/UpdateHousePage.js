@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {editHouse, getAllServices, getHouse} from '../../util/APIUtils';
-import './NewHouse.css';
+import './NewHousePage.css';
 import {Button, Form, notification} from 'antd';
 import LocationSection from '../../components/input/LocationSection'
 import NameSection from '../../components/input/NameSection'

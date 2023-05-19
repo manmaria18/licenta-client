@@ -135,16 +135,6 @@ class Home extends Component {
                             </div>
                         </div>
 
-                        {/*<div className="col-1-4 service-box service-2" >*/}
-                        {/*    <div className="content">*/}
-                        {/*        <div className="service-icon">*/}
-                        {/*            <b className="circle-icon icon-star4">🗺️</b>*/}
-                        {/*        </div>*/}
-                        {/*        <div className="service-entry">*/}
-                        {/*            <h2>Alegeti zona de interes</h2>*/}
-                        {/*        </div>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
                         <div className="col-1-4 service-box service-3">
                             <div className="content">
                                 <div className="service-icon">
