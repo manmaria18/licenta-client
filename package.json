@@ -4,11 +4,13 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
-    "antd": "^3.2.2",
+    "@stripe/react-stripe-js": "^2.1.0",
+    "@stripe/stripe-js": "^1.53.0",
+    "antd": "^5.5.1",
     "pigeon-maps": "^0.21.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-pannellum": "^0.2.13",
+    "react-pannellum": "^0.1.15",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5"
   },

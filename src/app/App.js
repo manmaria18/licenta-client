@@ -27,6 +27,7 @@ import { Layout, notification } from 'antd';
 import Admin from "../user/admin/Admin";
 import ViewBillsOfAHouse from "../pages/house/ViewBillsOfAHouse";
 import UpdateHouse from "../pages/house/UpdateHouse";
+import CheckoutForm from "../components/stripe/CheckoutForm";
 const { Content } = Layout;
 
 class App extends Component {
@@ -143,6 +144,10 @@ class App extends Component {
 
                 <Route path="/house/view/:id"
                        component={ViewBillsOfAHouse}
+                       currentUser={this.state.currentUser}></Route>
+
+                <Route path="/house/view/:id/bills/payment"
+                       component={CheckoutForm}
                        currentUser={this.state.currentUser}></Route>
 
                 <Route path="/house/search/:name"
