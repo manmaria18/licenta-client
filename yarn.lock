@@ -130,8 +130,8 @@
   "resolved" "https://registry.npmjs.org/ajv-keywords/-/ajv-keywords-3.2.0.tgz"
   "version" "3.2.0"
 
-"ajv@^5.0.0", "ajv@^5.1.0", "ajv@^5.1.5", "ajv@^5.2.0", "ajv@^6.0.0":
-  "integrity" "sha1-c7Xuyj+rZT49P5Qis0GtQiBdyWU="
+"ajv@^5.0.0", "ajv@^5.1.5":
+  "integrity" "sha512-Ajr4IcMXq/2QmMkEmSvxqfLN5zGmJ92gHXAeOXq1OekoH2rfDNsgdDoL2f7QaRCy7G/E6TpxBVdRuNraMztGHw=="
   "resolved" "https://registry.npmjs.org/ajv/-/ajv-5.5.2.tgz"
   "version" "5.5.2"
   dependencies:
@@ -140,12 +140,32 @@
     "fast-json-stable-stringify" "^2.0.0"
     "json-schema-traverse" "^0.3.0"
 
-"ajv@^6.0.1":
-  "integrity" "sha512-4Wyjt8+t6YszqaXnLDfMmG/8AlO5Zbcsy3ATHncCzjW/NoPzAId8AK6749Ybjmdt+kUY1gP60fCu46oDxPv/mg=="
-  "resolved" "https://registry.npmjs.org/ajv/-/ajv-6.5.4.tgz"
-  "version" "6.5.4"
+"ajv@^5.1.0":
+  "integrity" "sha512-Ajr4IcMXq/2QmMkEmSvxqfLN5zGmJ92gHXAeOXq1OekoH2rfDNsgdDoL2f7QaRCy7G/E6TpxBVdRuNraMztGHw=="
+  "resolved" "https://registry.npmjs.org/ajv/-/ajv-5.5.2.tgz"
+  "version" "5.5.2"
   dependencies:
-    "fast-deep-equal" "^2.0.1"
+    "co" "^4.6.0"
+    "fast-deep-equal" "^1.0.0"
+    "fast-json-stable-stringify" "^2.0.0"
+    "json-schema-traverse" "^0.3.0"
+
+"ajv@^5.2.0":
+  "integrity" "sha512-Ajr4IcMXq/2QmMkEmSvxqfLN5zGmJ92gHXAeOXq1OekoH2rfDNsgdDoL2f7QaRCy7G/E6TpxBVdRuNraMztGHw=="
+  "resolved" "https://registry.npmjs.org/ajv/-/ajv-5.5.2.tgz"
+  "version" "5.5.2"
+  dependencies:
+    "co" "^4.6.0"
+    "fast-deep-equal" "^1.0.0"
+    "fast-json-stable-stringify" "^2.0.0"
+    "json-schema-traverse" "^0.3.0"
+
+"ajv@^6.0.0", "ajv@^6.0.1":
+  "integrity" "sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g=="
+  "resolved" "https://registry.npmjs.org/ajv/-/ajv-6.12.6.tgz"
+  "version" "6.12.6"
+  dependencies:
+    "fast-deep-equal" "^3.1.1"
     "fast-json-stable-stringify" "^2.0.0"
     "json-schema-traverse" "^0.4.1"
     "uri-js" "^4.2.2"
@@ -1811,7 +1831,7 @@
   "version" "2.1.1"
 
 "co@^4.6.0":
-  "integrity" "sha1-bqa989hTrlTMuOR7+gvz+QMfsYQ="
+  "integrity" "sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ=="
   "resolved" "https://registry.npmjs.org/co/-/co-4.6.0.tgz"
   "version" "4.6.0"
 
@@ -3194,14 +3214,14 @@
   "version" "1.3.0"
 
 "fast-deep-equal@^1.0.0":
-  "integrity" "sha1-wFNHeBfIa1HaqFPIHgWbcz0CNhQ="
+  "integrity" "sha512-fueX787WZKCV0Is4/T2cyAdM4+x1S3MXXOAhavE1ys/W42SHAPacLTQhucja22QBYrfGw50M2sRiXPtTGv9Ymw=="
   "resolved" "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-1.1.0.tgz"
   "version" "1.1.0"
 
-"fast-deep-equal@^2.0.1":
-  "integrity" "sha1-ewUhjd+WZ79/Nwv3/bLLFf3Qqkk="
-  "resolved" "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-2.0.1.tgz"
-  "version" "2.0.1"
+"fast-deep-equal@^3.1.1":
+  "integrity" "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q=="
+  "resolved" "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz"
+  "version" "3.1.3"
 
 "fast-json-stable-stringify@^2.0.0":
   "integrity" "sha1-1RQsDK7msRifh9OnYREGT4bIu/I="
@@ -4844,7 +4864,7 @@
   "version" "0.5.7"
 
 "json-schema-traverse@^0.3.0":
-  "integrity" "sha1-NJptRMU6Ud6JtAgFxdXlm0F9M0A="
+  "integrity" "sha512-4JD/Ivzg7PoW8NzdrBSr3UFwC9mHgvI7Z6z3QGBsSHgKaRTUDmyZAAKJo2UbG1kUVfS9WS8bi36N49U1xw43DA=="
   "resolved" "https://registry.npmjs.org/json-schema-traverse/-/json-schema-traverse-0.3.1.tgz"
   "version" "0.3.1"
 
@@ -6480,7 +6500,7 @@
     "source-map" "^0.5.6"
     "supports-color" "^3.2.3"
 
-"postcss@^6.0.0", "postcss@^6.0.1", "postcss@^6.0.13", "postcss@8.2.10":
+"postcss@^6.0.0", "postcss@^6.0.1", "postcss@^6.0.13":
   "integrity" "sha512-soOk1h6J3VMTZtVeVpv15/Hpdl2cBLX3CAw4TAbkpTJiNPk9YP/zWcD1ND+xEtvyuuvKzbxliTOIyvkSeSJ6ag=="
   "resolved" "https://registry.npmjs.org/postcss/-/postcss-6.0.23.tgz"
   "version" "6.0.23"
@@ -7126,7 +7146,7 @@
     "strip-ansi" "3.0.1"
     "text-table" "0.2.0"
 
-"react-dom@^0.14.0 || ^15.0.0-0 || ^16.0.0", "react-dom@^0.14.0 || ^15.0.0-rc || ^16.0.0-rc || ^16.0.0", "react-dom@^0.14.0 || ^15.0.1 || ^16.0.0", "react-dom@^16.5.2", "react-dom@>=16.0.0", "react-dom@>=16.9.0", "react-dom@17.0.2":
+"react-dom@^0.14.0 || ^15.0.0-0 || ^16.0.0", "react-dom@^0.14.0 || ^15.0.0-rc || ^16.0.0-rc || ^16.0.0", "react-dom@^0.14.0 || ^15.0.1 || ^16.0.0", "react-dom@^16.5.2", "react-dom@>=16.0.0", "react-dom@>=16.9.0":
   "integrity" "sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-16.14.0.tgz"
   "version" "16.14.0"
@@ -7160,11 +7180,6 @@
   "integrity" "sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA=="
   "resolved" "https://registry.npmjs.org/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz"
   "version" "3.0.4"
-
-"react-pannellum@^0.2.13":
-  "integrity" "sha512-KEe+YZ4vsvDQEycwGDkZOohrwSwS3G1JmPXmNa6Us80qw9UXBoA1y7WlgeDfRxWobUdQZloSmiA2AmVzwSpS3g=="
-  "resolved" "https://registry.npmjs.org/react-pannellum/-/react-pannellum-0.2.13.tgz"
-  "version" "0.2.13"
 
 "react-router-dom@^4.3.1":
   "integrity" "sha512-c/MlywfxDdCp7EnB7YfPMOfMD3tOtIjrQlj/CKfNMBxdmpJP8xcz5P/UAFn3JbnQCNUxsHyVVqllF9LhgVyFCA=="
@@ -7248,7 +7263,7 @@
     "lodash.debounce" "^4.0.8"
     "resize-observer-polyfill" "^1.5.0"
 
-"react@*", "react@^0.14.0 || ^15.0.0-0 || ^16.0.0", "react@^0.14.0 || ^15.0.0-rc || ^16.0.0-rc || ^16.0.0", "react@^0.14.0 || ^15.0.1 || ^16.0.0", "react@^0.14.3 || ^15.0.0 || ^16.0.0", "react@^16.14.0", "react@^16.5.2", "react@>=15", "react@>=16.0.0", "react@>=16.9.0", "react@17.0.2":
+"react@*", "react@^0.14.0 || ^15.0.0-0 || ^16.0.0", "react@^0.14.0 || ^15.0.0-rc || ^16.0.0-rc || ^16.0.0", "react@^0.14.0 || ^15.0.1 || ^16.0.0", "react@^0.14.3 || ^15.0.0 || ^16.0.0", "react@^16.14.0", "react@^16.5.2", "react@>=15", "react@>=16.0.0", "react@>=16.9.0":
   "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
   "version" "16.14.0"

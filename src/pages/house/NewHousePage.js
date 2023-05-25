@@ -16,7 +16,8 @@ class NewHousePage extends Component {
             name: '',
             services: [],
             location: {
-                coordinates: null,
+                latitude: null,
+                longitude: null,
             },
             selectedServices: [],
         };
@@ -75,7 +76,7 @@ class NewHousePage extends Component {
 
         const home = {
             name: this.state.name,
-            location: this.state.location.coordinates,
+            location: this.state.location,
             services: this.state.selectedServices.map(selectedId => ({
                 id: selectedId,
             })),
@@ -111,19 +112,17 @@ class NewHousePage extends Component {
         };
 
         this.setState({
-            location: {
-                coordinates: coordinates,
-            },
+            location: coordinates,
         });
     }
 
     isFormInvalid() {
-        return !this.state.name || !this.state.location.coordinates;
+        return !this.state.name || !this.state.location;
     }
 
     render() {
         const { name, services, location, selectedServices } = this.state;
-        const locations = location.coordinates ? [location.coordinates] : [];
+        const locations = location ? [location] : [];
 
         return (
             <div>
