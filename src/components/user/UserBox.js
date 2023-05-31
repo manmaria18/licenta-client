@@ -6,10 +6,13 @@ import { formatDate } from '../../util/Helpers';
 function UserBox({ user }) {
     return (
         <div className="user-details">
-            <div className="user-avatar">
+            <div className="user-avatar" style={{width:250}}>
                 <Avatar
                     className="user-avatar-circle"
-                    style={{ backgroundColor: getAvatarColor(user.name) }}
+                    style={{ backgroundColor: getAvatarColor(user.name), width:80, height:80, borderRadius: '50%', display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: 24 }}
                 >
                     {user.name[0].toUpperCase()}
                 </Avatar>
