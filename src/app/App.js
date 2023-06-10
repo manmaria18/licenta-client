@@ -24,6 +24,8 @@ import { Layout, notification } from 'antd';
 import ViewBillsOfAHouse from "../pages/house/ViewBillsOfAHouse";
 import UpdateHouse from "../pages/house/UpdateHousePage";
 import '../pages/TestTheme.css'
+import TestStripe from "../components/stripe/TestStripe";
+import TestStripePage from "../pages/stripe/TestStripePage";
 
 const { Content } = Layout;
 
@@ -141,6 +143,11 @@ class App extends Component {
                        component={SearchHouse}
                        currentUser={this.state.currentUser}></Route>
                 <Route component={NotFound}></Route>
+
+                {/*<Route path="/create-payment-intent"*/}
+                {/*       component={TestStripePage}*/}
+                {/*       currentUser={this.state.currentUser}></Route>*/}
+
               </Switch>
             </div>
 

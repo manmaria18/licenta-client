@@ -2,8 +2,16 @@ import React from 'react';
 import { Button } from 'antd';
 import IndexForm from '../../components/IndexForm';
 import { EXPECTING_INPUT } from '../../constants';
+import TestStripe from "../stripe/TestStripe";
 
-const BillsList = ({ bills, handleBillPayment, handleBillUpdate }) => {
+const BillsList = ({bills, handleBillPayment, handleBillUpdate, history}) => {
+
+    function onOpen(id)
+    {
+        //history.push("/house/view/" + id + "/payment");
+        history.push("/create-payment-intent");
+        //TestStripe();
+    }
     return (
         <div>
             {bills &&
@@ -43,7 +51,7 @@ const BillsList = ({ bills, handleBillPayment, handleBillUpdate }) => {
                                 ) : (
                                     <Button
                                         className="btn read-more"
-                                        onClick={() => handleBillPayment(current.id)}
+                                        onClick={() => onOpen(current.houseId)}
                                         style={{ backgroundColor: 'green', color: 'white' }}
                                     >
                                         Plateste factura

@@ -66,6 +66,9 @@ class ViewBillsOfAHouse extends Component {
         });
     };
 
+
+
+
     render() {
         const { house } = this.state;
 
@@ -75,6 +78,7 @@ class ViewBillsOfAHouse extends Component {
                     bills={house.bills}
                     handleBillPayment={this.handleBillPayment}
                     handleBillUpdate={this.handleBillUpdate}
+                    history={this.props.history}
                 />
             </div>
         );
