@@ -202,12 +202,40 @@ export function getUserBills() {
     });
 }
 
+
+export function getBill(id) {
+    return request({
+        url: API_BASE_URL + `/bills/${id}`,
+        method: 'GET'
+    });
+}
+
 export function submitIndex(billIndex){
     console.log("SUBMIT INDEX",billIndex);
     return request({
         url: API_BASE_URL + "/payment/index",
         method: 'POST',
         body: JSON.stringify(billIndex)
+    });
+}
+
+export function createPaymentIntent(billIds){
+    console.log("PAYMENT INTENT");
+    return request({
+        url: API_BASE_URL + "/create-payment-intent",
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ billIds: billIds }),
+    });
+}
+
+export function confirmPayment(billIds){
+    console.log("PAYMENT CONFIRMATION");
+    return request({
+        url: API_BASE_URL + "/confirm-payment",
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ billIds: billIds }),
     });
 }
 

@@ -17,3 +17,4 @@ export const PASSWORD_MAX_LENGTH = 20;
 
 
 export const EXPECTING_INPUT = "EXPECTING_INPUT";
+export const PENDING = "PENDING";

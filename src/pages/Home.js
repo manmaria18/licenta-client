@@ -201,7 +201,6 @@ class Home extends Component {
                         this.state.locations.map(location => <div>
                                 <HouseView
                                     location={location}
-                                    history={this.props.history}
                                 />
                             <br/>
                             <br/>

@@ -74,12 +74,16 @@ class ViewBillsOfAHouse extends Component {
 
         return (
             <div>
-                <BillsList
-                    bills={house.bills}
-                    handleBillPayment={this.handleBillPayment}
-                    handleBillUpdate={this.handleBillUpdate}
-                    history={this.props.history}
-                />
+                {
+                    house.bills.length < 1
+                    ? <div> Nu sunt facutri curente </div>
+                    : <BillsList
+                        bills={house.bills}
+                        handleBillPayment={this.handleBillPayment}
+                        handleBillUpdate={this.handleBillUpdate}
+                    />
+                }
+
             </div>
         );
     }
