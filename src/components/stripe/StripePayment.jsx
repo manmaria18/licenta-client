@@ -7,7 +7,7 @@ import { createPaymentIntent } from '../../util/APIUtils';
 import CheckoutForm from "./CheckoutForm";
 import "./StripePayment.css";
 
-const stripePromise = loadStripe("pk_test_51NHT9TBiCn55Y1cl03AxR8eI0yHQwx6QAr2SWVKl6JsBi4wqAOPQQxawVs8phloVpxjGeBkmWub1XsKoCkv5x1Pe00n78Rr0sq");
+const stripePromise = loadStripe("pk_test_51NBG3dJTQI7e9TUW5A7FyyL2PvEFX378Al8N804B7xJV5zSoUqEuK5UlrTcGMJWzPrw2OzKJoXzL8y6VFTaIHrMp00h5jfc8qB");
 
 export default function StripePayment({ billId }) {
     const [clientSecret, setClientSecret] = useState("");
