@@ -3,13 +3,33 @@ import { Button } from 'antd';
 import { withRouter } from 'react-router-dom';
 
 import {
-    deleteHouse,
+    deleteHouse, getHouse
 } from "../../util/APIUtils";
 
 export class HouseView extends Component {
     constructor(props) {
         super(props);
+        this.state={
+            house: {
+                name:"",
+            }
+        };
+        this.onGetHouseById=this.onGetHouseById.bind(this);
+
     }
+
+    componentDidMount() {
+        this.onGetHouseById(this.props.location.houseId);
+    }
+
+    onGetHouseById(id){
+
+        let house = getHouse(id);
+        console.log("The house: ", house);
+        this.setState({
+            house: house,
+        });
+    };
 
     onDelete(id) {
         deleteHouse(id)
@@ -36,11 +56,10 @@ export class HouseView extends Component {
             <div className="col-1-2">
                 <article className="post-wrap">
                     <div className="post">
-                        <h2 className="entry-title"><a href="#0">{this.props.location.name}</a></h2>
-                        <h4>{this.props.location.description}</h4>
+                        <h2 className="entry-title"><a href="#0">{this.props.location.id+"ALOHA"}</a></h2>
                         <Button
                             className="btn read-more"
-                            onClick={() => this.onOpen(this.props.location.id)}
+                            onClick={() => this.props.onClick && this.props.onClick(this.props.location.houseId|| this.props.location.id)}
                             style={{ backgroundColor: "green", color: "white" }}
                         >
                             Vizualizeaza facturi

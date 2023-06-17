@@ -8,3 +8,30 @@
     text-align: center;
     margin-bottom: 40px;    
 }
+
+.carousel-container {
+    position: relative;
+}
+
+.custom-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.custom-dot.active {
+    background-color: #000;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Map, Marker} from "pigeon-maps";
+import {Map, Marker, Overlay, Draggable} from "pigeon-maps";
 import {maptiler} from "pigeon-maps/providers";
 
 
@@ -20,10 +20,15 @@ export class MapView extends Component {
 
                 { this.props.locations &&
                     this.props.locations.map(location =>
-                    <Marker width={50}
+
+                    <Draggable width={50}
                          anchor={[location.latitude, location.longitude]}
-                         onClick={() => this.props.onClick && this.props.onClick(location.idHome || location.id)}
-                    /> )
+
+                    ><img src="https://www.clker.com/cliparts/Y/s/N/L/x/Y/home-md.png" alt="House Icon 3d Png, Transparent Png@kindpng.com" width={50} height={45} onClick={() => this.props.onClick && this.props.onClick(location.idHome || location.id)}/>
+
+                    </Draggable>
+
+                    )
 
                 }
 

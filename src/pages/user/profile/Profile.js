@@ -177,7 +177,11 @@ class Profile extends Component {
                                     <CurveUpSvg/>
 
                                     <HousesList
-                                        locations={locations}
+                                        onClick={this.onHouseClick}
+                                        locations={locations.map(location => ({
+                                            ...location.location,
+                                            id: location.id
+                                        }))}
                                         history={this.props.history}
                                     />
                                 </TabPane>

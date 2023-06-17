@@ -1,7 +1,7 @@
 import React from 'react';
 import HouseView from './HouseView';
 
-const HousesList = ({ locations, history, currentUser, onDeleteSuccessCallback, onDeleteFailCallback }) => {
+const HousesList = ({ locations, history, currentUser, onDeleteSuccessCallback, onDeleteFailCallback, onClick }) => {
     return (
         <div>
             {locations.map(location => (
@@ -10,6 +10,7 @@ const HousesList = ({ locations, history, currentUser, onDeleteSuccessCallback, 
                     location={location}
                     history={history}
                     currentUser={currentUser}
+                    onClick={onClick}
                     onDeleteSuccessCallback={onDeleteSuccessCallback}
                     onDeleteFailCallback={onDeleteFailCallback}
                 />
