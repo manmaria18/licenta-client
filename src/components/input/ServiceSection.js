@@ -37,12 +37,12 @@ const ServicesSection = ({
                 </div>
                 {value.map((service) => (
                     <div style={{ display: 'flex', justifyContent: 'center' }} key={service.id}>
-                        {isServiceSelected(service.id) ? (
-                            <Button onClick={() => unselectService(service.id)}>
+                        {isServiceSelected(service) ? (
+                            <Button onClick={() => unselectService(service)}>
                                 REMOVE {service.provider.name}---{service.price}
                             </Button>
                         ) : (
-                            <Button onClick={() => selectService(service.id)}>
+                            <Button onClick={() => selectService(service)}>
                                 ADD {service.provider.name}---{service.price}
                             </Button>
                         )}

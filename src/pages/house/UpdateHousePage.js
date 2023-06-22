@@ -30,7 +30,7 @@ class NewHouse extends Component {
                     name: response.name,
                     location: response.location,
                     services: [],
-                    selectedServices: response.services ? response.services.map(service => service.id) : [],
+                    selectedServices: response.services ? response.services : [],
                 });
             });
 
@@ -47,22 +47,23 @@ class NewHouse extends Component {
         this.loadAllServices();
     }
 
-    selectService(id) {
-        const selectedServices = [...this.state.selectedServices, id];
+    selectService(service) {
+        let selectedServices = this.state.selectedServices.filter(selectedService => selectedService.type !== service.type);
+        selectedServices = [...selectedServices,service];
         this.setState({
             selectedServices,
         });
     }
 
-    unselectService(id) {
-        const selectedServices = this.state.selectedServices.filter(selectedId => selectedId !== id);
+    unselectService(service) {
+        const selectedServices = this.state.selectedServices.filter(selectedService => selectedService.id !== service.id);
         this.setState({
             selectedServices,
         });
     }
 
-    isServiceSelected(id) {
-        return this.state.selectedServices.includes(id);
+    isServiceSelected(service) {
+        return this.state.selectedServices.some(selectedService => selectedService.id===service.id);
     }
 
     loadAllServices() {
@@ -91,9 +92,9 @@ class NewHouse extends Component {
             name: this.state.name,
             //description: this.state.description.text,
             location: this.state.location,
-            services: this.state.selectedServices.map(selectedId=> {
+            services: this.state.selectedServices.map(selectedService=> {
                 return {
-                    id: selectedId,
+                    id: selectedService.id,
                 }
             })
         };
