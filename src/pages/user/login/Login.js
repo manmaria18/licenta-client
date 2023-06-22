@@ -39,13 +39,13 @@ class LoginForm extends Component {
                 }).catch(error => {
                     if(error.status === 401) {
                         notification.error({
-                            message: 'Imobiliare360',
+                            message: 'Emperia',
                             description: 'Utilizator sau parola incorecte'
                         });                    
                     } else {
                         notification.error({
-                            message: 'Imobiliare 360',
-                            description: error.message || 'Login-ul nu a functionat, va rugam incercati iar!'
+                            message: 'Emperia',
+                            description: 'Login-ul nu a functionat, va rugam incercati iar!'
                         });                                            
                     }
                 });

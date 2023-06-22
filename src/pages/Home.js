@@ -3,14 +3,15 @@ import { getAllHomes,} from '../util/APIUtils';
 import LoadingIndicator  from '../common/LoadingIndicator';
 import { withRouter } from 'react-router-dom';
 import './Home.css';
-import { Carousel, Radio } from 'antd';
-//import { useState } from 'react';
-
-
-
+//import { Carousel, Radio } from 'antd';
+//import AwesomeSlider from "../components/design/AwesomeSlider";
 import {MapView} from '../components/map/MapView'
 import HouseView from "../components/house/HouseView";
-
+import AwesomeSlider from 'react-awesome-slider';
+import AwesomeSliderStyles from 'react-awesome-slider/src/styled/cube-animation';
+//import AwesomeSliderStyles from 'react-awesome-slider/src/styled/fold-out-animation';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 class Home extends Component {
     constructor(props) {
@@ -121,62 +122,90 @@ class Home extends Component {
                         {/*     //locations={this.state.locations.map(location =>{ return {...location.location, id: location.id} })}*/}
                         {/*/>*/}
 
-                            <Carousel autoplay dotsPosition='bottom'>
-                                <div>
-                                    <h3 style={{height: '600px',
-                                        color: '#fff',
-                                        lineHeight: '160px',
-                                        textAlign: 'center',
-                                        fontFamily:"Copperplate Gothic Light",
-                                        background: '#364d79'}}>Domneste peste imobilele tale!</h3>
-                                </div>
-                                <div>
-                                    <h3 style={{height: '600px',
-                                        color: '#fff',
-                                        lineHeight: '160px',
-                                        textAlign: 'center',
-                                        fontFamily:"Copperplate Gothic Light",
-                                        background: '#364d79'}}> <img src={"https://conocedores.com/wp-content/uploads/2016/06/googlemapslogo.jpg"} style={{height:"600px",width:"1550px"}}></img></h3>
+                            {/*<Carousel autoplay>*/}
+                            {/*    <div>*/}
+                            {/*        <h3 style={{height: '600px',*/}
+                            {/*            color: '#fff',*/}
+                            {/*            lineHeight: '160px',*/}
+                            {/*            textAlign: 'center',*/}
+                            {/*            fontFamily:"Copperplate Gothic Light",*/}
+                            {/*            background: '#364d79'}}>Domneste peste imobilele tale!</h3>*/}
+                            {/*    </div>*/}
+                            {/*    <div>*/}
+                            {/*        <h3 style={{height: '600px',*/}
+                            {/*            color: '#fff',*/}
+                            {/*            lineHeight: '160px',*/}
+                            {/*            textAlign: 'center',*/}
+                            {/*            fontFamily:"Copperplate Gothic Light",*/}
+                            {/*            background: '#364d79'}}> <img src={"https://conocedores.com/wp-content/uploads/2016/06/googlemapslogo.jpg"} style={{height:"600px",width:"1550px"}}></img></h3>*/}
 
-                                </div>
-                                <div>
-                                    <h3 style={{height: '600px',
-                                        color: '#fff',
-                                        lineHeight: '160px',
-                                        textAlign: 'center',
-                                        fontFamily:"Copperplate Gothic Light",
-                                        background: '#364d79'}}>
-                                        <img src={"https://ithot.ro/wp-content/uploads/2020/01/Furnizori-Energie-Electrica-ithot-ro-11.jpg"} style={{height:"600px",width:"1550px"}}></img>
+                            {/*    </div>*/}
+                            {/*    <div>*/}
+                            {/*        <h3 style={{height: '600px',*/}
+                            {/*            color: '#fff',*/}
+                            {/*            lineHeight: '160px',*/}
+                            {/*            textAlign: 'center',*/}
+                            {/*            fontFamily:"Copperplate Gothic Light",*/}
+                            {/*            background: '#364d79'}}>*/}
+                            {/*            <img src={"https://ithot.ro/wp-content/uploads/2020/01/Furnizori-Energie-Electrica-ithot-ro-11.jpg"} style={{height:"600px",width:"1550px"}}></img>*/}
 
-                                    </h3>
-                                </div>
-                                <div>
-                                    <h3 style={{height: '600px',
-                                        color: '#fff',
-                                        lineHeight: '160px',
-                                        textAlign: 'center',
-                                        fontFamily:"Copperplate Gothic Light",
-                                        background: '#364d79'}}>
-                                        <img src={"https://canada-first.ca/wp-content/uploads/2019/12/Lowest-Credit-Card-Processing-Fees.jpg"} style={{height:"600px",width:"1550px"}}></img>
+                            {/*        </h3>*/}
+                            {/*    </div>*/}
+                            {/*    <div>*/}
+                            {/*        <h3 style={{height: '600px',*/}
+                            {/*            color: '#fff',*/}
+                            {/*            lineHeight: '160px',*/}
+                            {/*            textAlign: 'center',*/}
+                            {/*            fontFamily:"Copperplate Gothic Light",*/}
+                            {/*            background: '#364d79'}}>*/}
+                            {/*            <img src={"https://canada-first.ca/wp-content/uploads/2019/12/Lowest-Credit-Card-Processing-Fees.jpg"} style={{height:"600px",width:"1550px"}}></img>*/}
 
-                                    </h3>
-                                </div>
-                                <div>
-                                    <h3 style={{height: '600px',
-                                        color: '#fff',
-                                        lineHeight: '160px',
-                                        textAlign: 'center',
-                                        fontFamily:"Copperplate Gothic Light",
-                                        background: '#364d79'}}>
-                                        <img src={"https://image.freepik.com/free-vector/online-payment-background-design_23-2147692504.jpg"} style={{height:"600px",width:"1550px"}}></img>
+                            {/*        </h3>*/}
+                            {/*    </div>*/}
+                            {/*    <div>*/}
+                            {/*        <h3 style={{height: '600px',*/}
+                            {/*            color: '#fff',*/}
+                            {/*            lineHeight: '160px',*/}
+                            {/*            textAlign: 'center',*/}
+                            {/*            fontFamily:"Copperplate Gothic Light",*/}
+                            {/*            background: '#364d79'}}>*/}
+                            {/*            <img src={"https://image.freepik.com/free-vector/online-payment-background-design_23-2147692504.jpg"} style={{height:"600px",width:"1550px"}}></img>*/}
 
-                                    </h3>
-                                </div>
+                            {/*        </h3>*/}
+                            {/*    </div>*/}
 
+                            {/*</Carousel>*/}
+                            {/*<div style={{backgroundColor: '#fffd20'}} className="custom-dots">*/}
+                            {/*    /!* Custom dots *!/*/}
+                            {/*</div>*/}
+                            {/*<AwesomeSlider cssModule={AwesomeSliderStyles}>*/}
+                            {/*    <div data-src="https://conocedores.com/wp-content/uploads/2016/06/googlemapslogo.jpg" />*/}
+                            {/*    <div data-src="https://ithot.ro/wp-content/uploads/2020/01/Furnizori-Energie-Electrica-ithot-ro-11.jpg" />*/}
+                            {/*    <div data-src="https://canada-first.ca/wp-content/uploads/2019/12/Lowest-Credit-Card-Processing-Fees.jpg" />*/}
+                            {/*    <div data-src="https://image.freepik.com/free-vector/online-payment-background-design_23-2147692504.jpg"/>*/}
+                            {/*</AwesomeSlider>*/}
+                            <Carousel showThumbs={false}>
+                                <div style={{height:"700px",width:"1550px"}}>
+                                    <img src="https://th.bing.com/th/id/OIG.MpPRu_lPGWvxxWA4rWd_?pid=ImgGn"  height="700px" width="1500px" />
+                                    <p style={{fontFamily:"Copperplate Gothic Light", background: '#364d79',fontSize:30 }} className="legend">Domneste peste imperiul tau!</p>
+                                </div>
+                                <div style={{height:"700px",width:"1550px"}}>
+                                    <img src="https://th.bing.com/th/id/OIG.mf7brMAbTVTURxK1hJef?pid=ImgGn" height="700px" width="1000px"/>
+                                    <p style={{fontFamily:"Copperplate Gothic Light", background: '#364d79',fontSize:30 }} className="legend">Vizualizeaza imobilele tale!</p>
+                                </div>
+                                <div style={{height:"700px",width:"1550px"}}>
+                                    <img src="https://th.bing.com/th/id/OIG.UHQqYm4K2BlDJLZ7Rc9V?pid=ImgGn" height="700px" width="1500px" />
+                                    <p style={{fontFamily:"Copperplate Gothic Light", background: '#364d79',fontSize:30 }} className="legend">Vizualizeaza furnizori!</p>
+                                </div>
+                                <div style={{height:"700px",width:"1550px"}}>
+                                    <img src="https://th.bing.com/th/id/OIG.g8mcmtS4.frn4hIn3Sai?pid=ImgGn" height="700px" width="1500px" />
+                                    <p style={{fontFamily:"Copperplate Gothic Light", background: '#364d79',fontSize:30 }} className="legend">Vizualizeaza facturile pentru fiecare imobil!</p>
+                                </div>
+                                <div style={{height:"700px",width:"1550px"}}>
+                                    <img src="https://cdn.searchenginejournal.com/wp-content/uploads/2020/03/the-top-10-most-popular-online-payment-solutions-5e9978d564973-1520x800.png" />
+                                    <p style={{fontFamily:"Copperplate Gothic Light", background: '#364d79',fontSize:30 }} className="legend">Plateste facturile usor si in siuranta!</p>
+                                </div>
                             </Carousel>
-                            <div style={{backgroundColor: '#fffd20'}} className="custom-dots">
-                                {/* Custom dots */}
-                            </div>
                         </div>
                     </div>
                 </div>

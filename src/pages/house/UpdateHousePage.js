@@ -108,7 +108,7 @@ class NewHouse extends Component {
             } else {
                 notification.error({
                     message: 'Emperia',
-                    description: error.message || 'Sorry! Something went wrong. Please try again!'
+                    description: 'Ne pare rau!Nu s-au putut salva modificarile!'
                 });
             }
         });

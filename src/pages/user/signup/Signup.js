@@ -62,14 +62,14 @@ class Signup extends Component {
         signup(signupRequest)
         .then(response => {
             notification.success({
-                message: 'Imobiliare360',
+                message: 'Emperia',
                 description: "Bine ati venit!",
             });          
             this.props.history.push("/login");
         }).catch(error => {
             notification.error({
-                message: 'Imobiliare360',
-                description: error.message || 'Ceva nu a functionat! Va rugam reincercati'
+                message: 'Emperia',
+                description: 'Ceva nu a functionat! Va rugam reincercati'
             });
         });
     }

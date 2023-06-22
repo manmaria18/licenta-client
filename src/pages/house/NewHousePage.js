@@ -84,6 +84,11 @@ class NewHousePage extends Component {
 
         createHouse(home)
             .then(response => {
+                console.log("New House", response);
+                notification.success({
+                    message: 'Emperia',
+                    description: 'Casa adaugata cu succes!',
+                });
                 this.props.history.push("/");
             })
             .catch(error => {
@@ -92,7 +97,7 @@ class NewHousePage extends Component {
                 } else {
                     notification.error({
                         message: 'Emperia',
-                        description: error.message || 'Sorry! Something went wrong. Please try again!',
+                        description: 'Ne pare rau! Nu s-a putut adauga casa!',
                     });
                 }
             });

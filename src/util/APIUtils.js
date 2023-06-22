@@ -17,15 +17,34 @@ const request = (options, contentType = 'application/json') => {
 
     console.log(options)
     return fetch(options.url, options)
-    .then(response => {
-            return response.json().then(json => {
-                if(!response.ok) {
-                    return Promise.reject(json);
-                }
-                return json;
-            })
-        }
-    );
+    // .then(response => {
+    //         return response.json().then(json => {
+    //             if(!response.ok) {
+    //                 return Promise.reject(json);
+    //             }
+    //             return json;
+    //         })
+    //     }
+    // );
+        .then(response => {
+            if (response.ok) {
+                // console.log("OK",response);
+                // let content;
+                // try{
+                //     content=response.json();}
+                    return response.json().catch(() => response.text()).catch((error)=> console.log("Error",error));
+            }
+            //     catch(error){
+            //        console.log("ERROR", error);
+            //        content=response.text();
+            //     };
+            //     console.log("CONTENT",content);
+            //     return content;
+            // } else {
+            //     console.log("NOT_OK",response);
+            //     return Promise.reject(response);
+            // }
+        })
 };
 
 export function getAllHomes() {
@@ -76,21 +95,7 @@ export function getFavoriteHouses() {
     });
 }
 
-export function addFavoriteHouse(id) {
 
-    return request({
-        url: API_BASE_URL + "/favorites/" + id,
-        method: 'POST'
-    });
-}
-
-export function removeFavoriteHouse(id) {
-
-    return request({
-        url: API_BASE_URL + "/favorites/" + id,
-        method: 'DELETE'
-    });
-}
 
 export function getAllUserHouses() {
 

@@ -142,6 +142,7 @@ class Profile extends Component {
         };
 
         const {user, locations, bills} = this.state;
+        console.log("Aici",locations);
 
         return (
             <div className="profile">
@@ -178,10 +179,8 @@ class Profile extends Component {
 
                                     <HousesList
                                         onClick={this.onHouseClick}
-                                        locations={locations.map(location => ({
-                                            ...location.location,
-                                            id: location.id
-                                        }))}
+                                        locations={locations}
+
                                         history={this.props.history}
                                     />
                                 </TabPane>
